@@ -2,6 +2,7 @@ package praktijkopdracht.prg027.mark.hr.smarthome;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -79,11 +80,10 @@ public class MainActivity extends AppCompatActivity{
         public View getView(int i, View view, ViewGroup viewGroup) {
             view = getLayoutInflater().inflate(R.layout.customlayout,null);
 
-            ImageView imageView = (ImageView)view.findViewById(R.id.imageView);
+            ImageView imageView             = (ImageView)view.findViewById(R.id.imageView);
             TextView textView_name          = (TextView)view.findViewById(R.id.textView_name);
             TextView textView_description   = (TextView)view.findViewById(R.id.textView_description);
 
-//            imageView.setImageResource(IMAGES[i]);
             switch(TYPES[i]) {
                 case "light":
                     imageView.setImageResource(R.drawable.ic_lightbulb_outline_black_24dp);
@@ -104,6 +104,19 @@ public class MainActivity extends AppCompatActivity{
                 default:
                     imageView.setImageResource(R.drawable.ic_devices_other_black_24dp);
             }
+
+            // set background color according to state
+            switch(STATES[i]) {
+                case "true":
+                    view.setBackgroundColor(Color.parseColor("#C8E6C9"));
+                    break;
+                case "false":
+                    view.setBackgroundColor(Color.parseColor("#FFCDD2"));
+                    break;
+                default:
+
+            }
+
             textView_name.setText(TITLES[i]);
             textView_description.setText(IDS[i]);
 
