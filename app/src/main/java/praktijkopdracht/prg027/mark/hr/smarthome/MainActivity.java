@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -78,11 +79,31 @@ public class MainActivity extends AppCompatActivity{
         public View getView(int i, View view, ViewGroup viewGroup) {
             view = getLayoutInflater().inflate(R.layout.customlayout,null);
 
-//            ImageView imageView = (ImageView)view.findViewById(R.id.imageView);
+            ImageView imageView = (ImageView)view.findViewById(R.id.imageView);
             TextView textView_name          = (TextView)view.findViewById(R.id.textView_name);
             TextView textView_description   = (TextView)view.findViewById(R.id.textView_description);
 
 //            imageView.setImageResource(IMAGES[i]);
+            switch(TYPES[i]) {
+                case "light":
+                    imageView.setImageResource(R.drawable.ic_lightbulb_outline_black_24dp);
+                    break;
+                case "tv":
+                    imageView.setImageResource(R.drawable.ic_tv_black_24dp);
+                    break;
+                case "speakers":
+                case "radio":
+                    imageView.setImageResource(R.drawable.ic_speaker_black_24dp);
+                    break;
+                case "phone":
+                    imageView.setImageResource(R.drawable.ic_phone_android_black_24dp);
+                    break;
+                case "computer":
+                    imageView.setImageResource(R.drawable.ic_desktop_windows_black_24dp);
+                    break;
+                default:
+                    imageView.setImageResource(R.drawable.ic_devices_other_black_24dp);
+            }
             textView_name.setText(TITLES[i]);
             textView_description.setText(IDS[i]);
 
