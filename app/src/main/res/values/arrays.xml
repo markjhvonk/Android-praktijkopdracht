@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_amount_titles">
+        <item>1 item</item>
+        <item>5 items</item>
+        <item>10 items</item>
+        <item>15 items</item>
+        <item>all items</item>
+    </string-array>
+    <string-array name="pref_amount_values">
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="pref_colors">
+        <item>White</item>
+        <item>Red</item>
+        <item>Purple</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+        <item>Orange</item>
+        <item>Grey</item>
+    </string-array>
+    <string-array name="pref_colors_values">
+        <item>#FFFFFF</item>
+        <item>#E57373</item>
+        <item>#BA68C8</item>
+        <item>#64B5F6</item>
+        <item>#FFF176</item>
+        <item>#FFB74D</item>
+        <item>#E0E0E0</item>
+    </string-array>
+</resources>
